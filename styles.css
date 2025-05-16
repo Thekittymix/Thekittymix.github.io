@@ -282,6 +282,11 @@ nav {
     color: white;
 }
 
+/* itch.io icon styling */
+.fa-itch-io:before {
+    content: "\f83a";  /* This is the Font Awesome icon code for itch.io */
+}
+
 /* ===== ABOUT SECTION ===== */
 .about {
     background-color: white;
@@ -403,19 +408,25 @@ nav {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.portfolio-img {
+/* Video styling for portfolio items */
+.portfolio-video {
     overflow: hidden;
-}
-
-.portfolio-img img {
-    transition: all 0.5s ease;
-    height: 240px;
+    position: relative;
     width: 100%;
-    object-fit: cover;
 }
 
-.portfolio-item:hover .portfolio-img img {
-    transform: scale(1.1);
+.portfolio-video video {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-video video {
+    transform: scale(1.02);
 }
 
 .portfolio-info {
