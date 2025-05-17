@@ -395,14 +395,11 @@ nav {
     color: white;
 }
 
-/* FIXED PORTFOLIO GRID */
 .portfolio-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 30px;
-    max-width: 1400px;
-    margin: 0 auto;
+    justify-items: center;
 }
 
 .portfolio-item {
@@ -410,41 +407,35 @@ nav {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    transition: all 0.3s ease;
     max-width: 400px;
-    margin-bottom: 30px;
-    /* Remove transition to prevent interference with video controls */
-    transition: box-shadow 0.3s ease;
+    width: 100%;
 }
 
 .portfolio-item:hover {
+    transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    /* Remove transformY which can affect video controls */
-    transform: none;
 }
 
-/* FIXED VIDEO STYLING */
+/* Video styling for portfolio items */
 .portfolio-video {
-    position: static;
+    overflow: hidden;
+    position: relative;
     width: 100%;
-    margin-bottom: 0;
-    background-color: #000;
 }
 
 .portfolio-video video {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 240px;
+    object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    /* Ensure controls appear on top */
-    position: relative;
-    z-index: 10;
+    display: block;
+    transition: all 0.5s ease;
 }
 
-.portfolio-video video:hover {
-    /* No transform on hover */
-    transform: none;
+.portfolio-item:hover .portfolio-video video {
+    transform: scale(1.02);
 }
 
 .portfolio-info {
@@ -456,7 +447,6 @@ nav {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: var(--primary-color);
-    text-align: center;
 }
 
 .portfolio-info p {
@@ -647,6 +637,10 @@ footer {
     .about-image {
         margin-bottom: 40px;
     }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -665,6 +659,10 @@ footer {
     .hero-buttons {
         flex-direction: column;
         gap: 15px;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
     }
 }
 
