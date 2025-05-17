@@ -395,7 +395,7 @@ nav {
     color: white;
 }
 
-/* UPDATED PORTFOLIO GRID - Changed from grid to flex layout for better centering */
+/* FIXED PORTFOLIO GRID */
 .portfolio-grid {
     display: flex;
     flex-wrap: wrap;
@@ -410,41 +410,41 @@ nav {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
     width: 100%;
     max-width: 400px;
     margin-bottom: 30px;
+    /* Remove transition to prevent interference with video controls */
+    transition: box-shadow 0.3s ease;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    /* Remove transformY which can affect video controls */
+    transform: none;
 }
 
+/* FIXED VIDEO STYLING */
 .portfolio-video {
-    position: relative;
+    position: static;
     width: 100%;
-    height: auto; /* Changed from fixed height */
-    overflow: visible; /* Changed from hidden to ensure controls are visible */
+    margin-bottom: 0;
+    background-color: #000;
 }
 
 .portfolio-video video {
     width: 100%;
-    height: auto; /* Auto height instead of fixed */
-    object-fit: contain; /* Changed from cover to prevent cropping */
+    height: auto;
+    display: block;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    /* Ensure controls appear on top */
     position: relative;
-    z-index: 5; /* Higher z-index to ensure it's on top */
-    pointer-events: auto !important; /* Explicitly enable pointer events */
+    z-index: 10;
 }
 
-.portfolio-video::after {
-    display: none;
-}
-
-.portfolio-item:hover .portfolio-video video {
-    transform: none; 
+.portfolio-video video:hover {
+    /* No transform on hover */
+    transform: none;
 }
 
 .portfolio-info {

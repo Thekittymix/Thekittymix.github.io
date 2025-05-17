@@ -117,34 +117,6 @@ const formSubmit = () => {
     }
 };
 
-// Fix video playability
-const fixVideoPlayability = () => {
-    const videos = document.querySelectorAll('.portfolio-video video');
-    
-    videos.forEach(video => {
-        // Remove and re-add controls attribute
-        video.removeAttribute('controls');
-        setTimeout(() => {
-            video.setAttribute('controls', 'controls');
-        }, 100);
-        
-        // Ensure proper z-index and pointer events
-        video.style.zIndex = '10';
-        video.style.position = 'relative';
-        video.style.pointerEvents = 'auto';
-        
-        // Add click event to play/pause
-        video.addEventListener('click', function(e) {
-            if (this.paused) {
-                this.play();
-            } else {
-                this.pause();
-            }
-            e.stopPropagation();
-        });
-    });
-};
-
 // Initialize all functions
 const app = () => {
     navSlide();
@@ -152,7 +124,6 @@ const app = () => {
     portfolioFilter();
     stickyNav();
     formSubmit();
-    fixVideoPlayability();
 };
 
 // Run when DOM is fully loaded
