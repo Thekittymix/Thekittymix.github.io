@@ -95,12 +95,35 @@ const stickyNav = () => {
     });
 };
 
+const formSubmit = () => {
+    const form = document.getElementById('contactForm');
+    
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // For now, just show an alert
+            alert(`Thank you for your message, ${name}! I will get back to you shortly.♡`);
+            
+            // Reset form
+            form.reset();
+        });
+    }
+};
+
 // Initialize all functions
 const app = () => {
     navSlide();
     smoothScroll();
     portfolioFilter();
     stickyNav();
+    formSubmit();
 };
 
 // Run when DOM is fully loaded

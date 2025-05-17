@@ -298,23 +298,17 @@ nav {
     gap: 50px;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .about-image {
     flex: 1;
-    min-width: 400px;
-    max-width: 450px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-width: 300px;
 }
 
 .about-image img {
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    width: 100%;
 }
 
 .about-image img:hover {
@@ -399,7 +393,6 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 30px;
-    justify-items: center;
 }
 
 .portfolio-item {
@@ -408,8 +401,6 @@ nav {
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    max-width: 400px;
-    width: 100%;
 }
 
 .portfolio-item:hover {
@@ -440,7 +431,6 @@ nav {
 
 .portfolio-info {
     padding: 25px;
-    text-align: center;
 }
 
 .portfolio-info h3 {
@@ -452,12 +442,10 @@ nav {
 .portfolio-info p {
     margin-bottom: 20px;
     font-size: 0.95rem;
-    text-align: left;
 }
 
 .portfolio-links {
     display: flex;
-    justify-content: center;
     gap: 15px;
 }
 
@@ -469,15 +457,13 @@ nav {
 
 .contact-content {
     display: flex;
-    justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
 }
 
-.contact-info {
+.contact-info, .contact-form {
     flex: 1;
     min-width: 300px;
-    max-width: 500px;
 }
 
 .contact-item {
@@ -521,6 +507,31 @@ nav {
     background-color: var(--primary-color);
     color: white;
     transform: translateY(-5px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
 }
 
 /* ===== FOOTER ===== */
