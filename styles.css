@@ -421,30 +421,19 @@ nav {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.portfolio-video {
-    position: relative;
+.portfolio-img {
+    overflow: hidden;
+}
+
+.portfolio-img img {
+    transition: all 0.5s ease;
+    height: 240px;
     width: 100%;
-    height: auto; /* Changed from fixed height */
-    overflow: visible; /* Changed from hidden to ensure controls are visible */
+    object-fit: cover;
 }
 
-.portfolio-video video {
-    width: 100%;
-    height: auto; /* Auto height instead of fixed */
-    object-fit: contain; /* Changed from cover to prevent cropping */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    position: relative;
-    z-index: 5; /* Higher z-index to ensure it's on top */
-    pointer-events: auto !important; /* Explicitly enable pointer events */
-}
-
-.portfolio-video::after {
-    display: none;
-}
-
-.portfolio-item:hover .portfolio-video video {
-    transform: none; 
+.portfolio-item:hover .portfolio-img img {
+    transform: scale(1.1);
 }
 
 .portfolio-info {
