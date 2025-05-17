@@ -298,17 +298,23 @@ nav {
     gap: 50px;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .about-image {
     flex: 1;
-    min-width: 300px;
+    min-width: 400px;
+    max-width: 450px;
+    background-color: #ffeb99;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .about-image img {
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    width: 100%;
 }
 
 .about-image img:hover {
@@ -393,6 +399,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 30px;
+    justify-items: center;
 }
 
 .portfolio-item {
@@ -401,6 +408,8 @@ nav {
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    max-width: 400px;
+    width: 100%;
 }
 
 .portfolio-item:hover {
@@ -431,6 +440,7 @@ nav {
 
 .portfolio-info {
     padding: 25px;
+    text-align: center;
 }
 
 .portfolio-info h3 {
@@ -442,10 +452,12 @@ nav {
 .portfolio-info p {
     margin-bottom: 20px;
     font-size: 0.95rem;
+    text-align: left;
 }
 
 .portfolio-links {
     display: flex;
+    justify-content: center;
     gap: 15px;
 }
 
@@ -457,13 +469,17 @@ nav {
 
 .contact-content {
     display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.contact-info, .contact-form {
-    flex: 1;
-    min-width: 300px;
+.contact-info {
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: white;
 }
 
 .contact-item {
@@ -477,15 +493,19 @@ nav {
     color: var(--primary-color);
     margin-right: 20px;
     margin-top: 5px;
+    width: 30px;
+    text-align: center;
 }
 
 .contact-item h3 {
     font-size: 1.3rem;
     margin-bottom: 8px;
+    color: var(--primary-color);
 }
 
 .social-media {
     display: flex;
+    justify-content: center;
     gap: 15px;
     margin-top: 40px;
 }
